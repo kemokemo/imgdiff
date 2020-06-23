@@ -85,7 +85,11 @@ func run() int {
 
 	dir := filepath.Dir(out)
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
-		os.MkdirAll(dir, 0777)
+		err = os.MkdirAll(dir, 0777)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "failed to create directory to save diff file: %v\n", err)
+			return exitInvalidArg
+		}
 	}
 	fDiff, err := os.OpenFile(out, os.O_WRONLY|os.O_CREATE, 0644)
 	if err != nil {

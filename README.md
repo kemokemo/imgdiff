@@ -20,15 +20,9 @@ Get the latest version from [the release page](https://github.com/kemokemo/imgdi
 ```sh
 $ imgdiff -h
 Usage: imgdiff [<option>...] <old image> <new image>
-  -h display help
+  -h	display help
   -o string
     	output filename (default "diff.png")
-```
-
-### Example
-
-```sh
-imgdiff -o=diff/screen.png v1/screen.png v2/screen.png
 ```
 
 This tool supports the following image formats.
@@ -38,10 +32,16 @@ This tool supports the following image formats.
 - gif
 - bmp
 
+### Example
+
+```sh
+$ imgdiff -o=diff/screen.png v1/screen.png v2/screen.png
+```
+
 ## License
 
 [MIT](https://github.com/kemokemo/imgdiff/blob/master/LICENSE)
 
-## Authors
+## Author
 
 [kemokemo](https://github.com/kemokemo)
