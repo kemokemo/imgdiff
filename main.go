@@ -53,14 +53,14 @@ func run() int {
 
 	fOld, err := os.Open(args[0])
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "first arg is empty. please set old image path: %v\n", err)
+		fmt.Fprintf(os.Stderr, "failed to open the old image: %v\n", err)
 		return exitInvalidArg
 	}
 	defer fOld.Close()
 
 	fNew, err := os.Open(args[1])
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "second arg is empty. please set new image path: %v\n", err)
+		fmt.Fprintf(os.Stderr, "failed to open the new image: %v\n", err)
 		return exitInvalidArg
 	}
 	defer fNew.Close()
