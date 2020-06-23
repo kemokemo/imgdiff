@@ -18,6 +18,16 @@ Get the latest version from [the release page](https://github.com/kemokemo/imgdi
 ## Usage
 
 ```sh
+$ imgdiff -h
+Usage: imgdiff [<option>...] <old image> <new image>
+  -h display help
+  -o string
+    	output filename (default "diff.png")
+```
+
+### Example
+
+```sh
 imgdiff -o=diff/screen.png v1/screen.png v2/screen.png
 ```
 
