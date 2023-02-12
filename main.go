@@ -25,11 +25,13 @@ const (
 var (
 	out  string
 	help bool
+	ver  bool
 )
 
 func init() {
 	flag.StringVar(&out, "o", "diff.png", "output filename")
 	flag.BoolVar(&help, "h", false, "display help")
+	flag.BoolVar(&ver, "v", false, "display version")
 	flag.Parse()
 }
 
@@ -41,6 +43,10 @@ func run() int {
 	if help {
 		fmt.Fprintf(os.Stdout, "Usage: imgdiff [<option>...] <old image> <new image>\n")
 		flag.PrintDefaults()
+		return exitOk
+	}
+	if ver {
+		fmt.Fprintf(os.Stdout, "imgdiff version %s.%s\n", Version, Revision)
 		return exitOk
 	}
 
